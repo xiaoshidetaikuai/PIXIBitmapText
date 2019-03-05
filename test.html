@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="js/pixi.js"></script>
+<script >
+    var app = new PIXI.Application(800, 600, {backgroundColor : 0x1099bb});
+    document.body.appendChild(app.view);
+    PIXI.loader.add('songti', '/test/assets/font1/font.fnt')
+        .load(onAssetsLoaded);
+    function onAssetsLoaded () {
+        var bitmapFontText = new PIXI.BitmapText('豌aaaaaaafddafafaqwerqrtqaaa啊啊啊', { font: '16px songti', align: 'right' });
+
+        bitmapFontText.x = app.screen.width - bitmapFontText.textWidth - 20;
+        bitmapFontText.y = 20;
+
+        app.stage.addChild(bitmapFontText);
+    }
+</script>
+</body>
+</html>
